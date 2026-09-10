@@ -15,8 +15,9 @@ jobs:
       - name: Build Flipper app
         uses: flipperdevices/flipperzero-ufbt-action@v0.1
         id: build
-        with:
-          sdk-url: https://up.momentum-fw.dev/builds/firmware/dev/flipper-z-f7-sdk-mntm-dev-d3f89dfe.zip
+       with:
+  sdk-url: https://up.momentum-fw.dev/builds/firmware/dev/flipper-z-f7-sdk-mntm-dev-d3f89dfe.zip
+  sdk-hw-target: f7
 
       - name: Upload FAP
         uses: actions/upload-artifact@v4
