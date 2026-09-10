@@ -1,0 +1,10 @@
+App(
+    appid="epson_universal_power",
+    name="Epson Universal Power",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="epson_universal_power_app",
+    stack_size=4 * 1024,
+    fap_category="Infrared",
+    fap_description="Try unique Epson projector Power IR signals",
+    fap_author="OpenAI",
+)
