@@ -1,0 +1,25 @@
+name: Build Epson Universal Power
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Flipper app
+        uses: flipperdevices/flipperzero-ufbt-action@v0.1
+        id: build
+        with:
+          sdk-url: https://up.momentum-fw.dev/builds/firmware/dev/flipper-z-f7-sdk-mntm-dev-d3f89dfe.zip
+
+      - name: Upload FAP
+        uses: actions/upload-artifact@v4
+        with:
+          name: epson-universal-power
+          path: ${{ steps.build.outputs.fap-artifacts }}
